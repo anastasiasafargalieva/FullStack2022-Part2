@@ -7,9 +7,15 @@ import Total from "./total";
 const Course = ({ course }) => {
     return (
         <div>
-            <Header course={course} />
-            <Content course={course} />
-            <Total course={course} />
+            <h1>Web development curriculum</h1>
+            { course.map( c =>
+                    <div key={c.id}>
+                        <Header name={c.name} />
+                        <Content parts={c.parts} />
+                        <Total parts={c.parts} />
+                    </div>
+                )
+            }
         </div>
     )
 }
