@@ -18,15 +18,13 @@ function App() {
 
     return (
     <div>
-        <Find currentQuery={findQuery} handleQueryChange={filterChangeHandler}  />
+        <Search currentQuery={findQuery} handleQueryChange={filterChangeHandler}  />
         {
             filteredResult.length > 10
-                ? <p>Too many matches, specify another filter </p>
-                : (
-                    filteredResult.length === 1
-                        ? <CountryDetail country={filteredResult[0]} />
-                        : <CountryList countries={filteredResult}/>
-                )
+                ? <p>Too many matches, please continue printing the next letter</p>
+                : filteredResult.length === 1
+                    ? <Details country={filteredResult[0]} />
+                    : <List countries={filteredResult} selectHandler={filterChangeHandler} />
         }
     </div>
   );
