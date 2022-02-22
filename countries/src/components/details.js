@@ -1,15 +1,17 @@
 import React from "react";
+import Weather from "./weather";
 
-const Details = ( {country} ) => {
+const Details = ( {country, weatherAccessKey} ) => {
         const languages = Object.entries( country.languages ).map( l =>l[1])
         return <div>
                 <h1>{country.name.common}</h1>
-                Capital {country.capital[0]}<br/>
-                Population {country.population}
-                <h2>Languages</h2>
+                capital {country.capital[0]}<br/>
+                population {country.population}
+                <h2>Spoken languages</h2>
                 <ul> {languages.map( l => <li key={l}>{l}</li> )} </ul>
                 <img alt={"flag"} src={country.flags.png}/>
+                <Weather cityName={country.capital[0]} apiKey={weatherAccessKey} />
         </div>
 }
 
-export default Details 
+export default Details
