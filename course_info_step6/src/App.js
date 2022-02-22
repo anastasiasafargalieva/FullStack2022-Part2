@@ -1,5 +1,5 @@
 import React from 'react';
-import Course from "./components/course";
+import Course from "./components/course/course";
 
 const App = () => {
     const course = [
