@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://shielded-basin-69229.herokuapp.com/api/persons"
+const baseUrl = "/api/persons"
 
 const addEntry = newEntry => {
     return axios.post(baseUrl, newEntry).then( response => response.data )
